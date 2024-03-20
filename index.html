@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Hamburguesa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .menu-toggle {
+      cursor: pointer;
+      display: none;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 5px;
+    }
+    
+    .navbar {
+      display: flex;
+    }
+    
+    .menu-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .content {
+      padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+    
+      .navbar {
+        display: none;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+        flex-direction: column;
+      }
+    
+      .menu-btn {
+        margin-bottom: 10px;
+      }
+    
+      .navbar.active {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    const menuToggle = document.getElementById('mobile-menu');
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="navbar">
+      <button class="menu-btn">Inicio</button>
+      <button class="menu-btn">Acerca de</button>
+      <button class="menu-btn">Servicios</button>
+      <button class="menu-btn">Portafolio</button>
+      <button class="menu-btn">Contacto</button>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>Bienvenido a mi sitio web</h1>
+    <p>¡Explora nuestras opciones!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
